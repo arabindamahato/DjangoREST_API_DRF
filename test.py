@@ -59,4 +59,4 @@ def delete_resource(id):
 	print(r.status_code)
 	# print(r.text)
 	print(r.json()) 
-delete_resource(3)
+# delete_resource(3)
