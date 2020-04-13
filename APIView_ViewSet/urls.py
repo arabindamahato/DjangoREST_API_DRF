@@ -4,6 +4,6 @@ from .views import TestApiView
 from . import views
 
 urlpatterns = [
-    path('apiview/', TestApiView.as_view()),
+    path('test-api-view/', TestApiView.as_view()),
 
 ]

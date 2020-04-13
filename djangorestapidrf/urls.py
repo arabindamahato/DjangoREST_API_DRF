@@ -15,14 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from only_serializers import views
-# from APIView_ViewSet import views
+from only_serializers import views
+from APIView_ViewSet import views
+from rest_framework.routers import DefaultRouter
+
+# Here we need to register our view class name.
+router = DefaultRouter()
+router.register('test-view-set', views.TestViewSet, basename='test-view-set')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/',include('only_serializers.urls')), # only_serializer app
 
+    # This url mapping is for APIView functionality
     path('api2/',include('APIView_ViewSet.urls')), # apiview_viewset app
+
+
+    # This url mapping is for viewset functionality
+    path('api2/', include(router.urls)),
 
 ]
