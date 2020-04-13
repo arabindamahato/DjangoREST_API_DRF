@@ -15,8 +15,7 @@ from django.utils.decorators import method_decorator
 @method_decorator(csrf_exempt,name='dispatch')
 class EmployeeCRUDCBV(View):
 	def get(self,request,*args,**kwargs):
-		json_data=request.body # the data comes from database because it is get method not post.
-							   # The data is in complex database type(qs, modelobj, objdata etc)
+		json_data=request.body 
 		stream=io.BytesIO(json_data)  # It converting from complex datatype(qs, modelobj, objdata etc) to
 									  # python native datatypes(dict, list, str etc) (Which comes from database)
 		data=JSONParser().parse(stream) # It converts the data into python dict

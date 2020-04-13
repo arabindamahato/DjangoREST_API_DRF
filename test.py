@@ -1,7 +1,7 @@
 import requests
 import json
 BASE_URL='http://127.0.0.1:8000/'
-ENDPOINT='api/'
+ENDPOINT='api/only_serializers/'
 import time
 
 # time.sleep(5)
@@ -16,7 +16,7 @@ def get_resources(id=None):
 	response=requests.get(BASE_URL+ENDPOINT, data=json.dumps(data))
 	print(response.status_code)
 	print(response.json())
-# get_resources(2)
+# get_resources()
 
 
 # time.sleep(10)
@@ -24,9 +24,9 @@ def get_resources(id=None):
 
 def create_resource():
 	new_emp={
- 		'eno':1012,
- 		'ename':'monoj',
- 		'esal':5700,
+ 		'eno':1013,
+ 		'ename':'Dinu',
+ 		'esal':22000,
  		'eaddr':'Balarampur',
 	}
 
@@ -41,7 +41,7 @@ def create_resource():
 def update_resource(id):
 	new_data={
 		'id':id,
-		'ename':'Ramesh Mahato'
+		'ename':'Ramesh ch Mahato'
 		}
 	r=requests.put(BASE_URL+ENDPOINT,data=json.dumps(new_data))
 	print(r.status_code)
@@ -59,4 +59,4 @@ def delete_resource(id):
 	print(r.status_code)
 	# print(r.text)
 	print(r.json()) 
-# delete_resource(3)
+# delete_resource(5)
