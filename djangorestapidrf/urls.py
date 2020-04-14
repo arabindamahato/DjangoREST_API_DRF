@@ -27,13 +27,20 @@ router.register('test-view-set', views.TestViewSet, basename='test-view-set')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/',include('only_serializers.urls')), # only_serializer app
 
+    # """ only_serializer app"""
+    path('api/',include('only_serializers.urls')), 
+
+    # """APIView_ViewSet app"""
     # This url mapping is for APIView functionality
-    path('api2/',include('APIView_ViewSet.urls')), # apiview_viewset app
-
-
-    # This url mapping is for viewset functionality
+    path('api2/',include('APIView_ViewSet.urls')),
+    # This url mapping is for ViewSet functionality
     path('api2/', include(router.urls)),
+
+    # """ apiview_viewset_with_models app"""
+    path('api3/', include('apiview_viewset_with_models.urls')),
+
+
+
 
 ]

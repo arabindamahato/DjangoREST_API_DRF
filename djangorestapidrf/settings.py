@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'only_serializers',
     'APIView_ViewSet',
+    'apiview_viewset_with_models',
 ]
 
 MIDDLEWARE = [
