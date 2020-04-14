@@ -1,9 +1,18 @@
 from django.shortcuts import render
 from rest_framework.views import APIView 
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView, CreateAPIView
 from apiview_viewset_with_models.models import Employee2
 from apiview_viewset_with_models.serializers import Employee2Serializer
+from rest_framework.generics import  (ListAPIView,
+									 CreateAPIView,
+									 RetrieveAPIView,
+									 UpdateAPIView,
+									 DestroyAPIView,
+									 ListCreateAPIView,
+									 RetrieveUpdateAPIView,
+									 RetrieveDestroyAPIView,
+									 RetrieveUpdateDestroyAPIView )
+
 
 #=============================================================
 # class EmployeeListAPIView(APIView):
@@ -31,6 +40,38 @@ class EmployeeListAPIView(ListAPIView):
 class EmployeeCreateAPIView(CreateAPIView):
 	queryset = Employee2.objects.all()
 	serializer_class = Employee2Serializer
+
+class EmployeeRetrieveAPIView(RetrieveAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+class EmployeeUpdateAPIView(UpdateAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+class EmployeeDestroyAPIView(DestroyAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+class EmployeeListCreateAPIView(ListCreateAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+class EmployeeRetrieveUpdateAPIView(RetrieveUpdateAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+class EmployeeRetrieveDestroyAPIView(RetrieveDestroyAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+class EmployeeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+
+
+
 
 
 		
