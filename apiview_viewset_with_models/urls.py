@@ -13,9 +13,13 @@ urlpatterns = [
 
 
 	
-	# With Mixin	
+	# With Mixin [api3]	
 	path('apiview-listcreate-modelmixin/', views.EmployeeListCreate.as_view()),
 	path('apiview-detail-modelmixin/<pk>/', views.EmployeeDetailAPIViewMixin.as_view()),
+
+
+
+	# """ For ViewSet functionality app level url is not required. """
 
 ]
 

@@ -6,6 +6,7 @@ from rest_framework.viewsets import ViewSet
 
 
 # Create your views here.
+# ==========only ViewSet,  without model==========
 class TestApiView(APIView):
 	def get(self, request, *args, **kwargs):
 		colors = ['yellow','green','red','gray','blue']

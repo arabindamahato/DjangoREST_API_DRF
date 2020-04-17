@@ -111,8 +111,15 @@ class EmployeeDetailAPIViewMixin(RetrieveAPIView, UpdateModelMixin, DestroyModel
 
 
 
+#====================================ViewSet with model===========================================
 
+from rest_framework.viewsets import ModelViewSet
 
+class EmployeeModelViewSet(ModelViewSet):
+	queryset = Employee2.objects.all()
+	serializer_class = Employee2Serializer
+
+    
 
 
 

@@ -16,15 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from only_serializers import views
-from APIView_ViewSet import views
+from APIView_ViewSet.views import TestViewSet
+from apiview_viewset_with_models.views import EmployeeModelViewSet
 from rest_framework.routers import DefaultRouter
 
 # Here we need to register our view class name.
 router = DefaultRouter()
-router.register('test-view-set', views.TestViewSet, basename='test-view-set')
+#==========ViewSet without model==========
+router.register('test-view-set', TestViewSet, basename='test-view-set')
+
+#==========ViewSet with model==========
+router.register('model-view-set', EmployeeModelViewSet) # Here base_name is not required
+                                                        # because this is model ViewSet
 
 
 urlpatterns = [
+    # This url mapping is for ViewSet functionality
+    path('api2/', include(router.urls)),
+
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 
@@ -34,10 +43,10 @@ urlpatterns = [
     # """APIView_ViewSet app"""
     # This url mapping is for APIView functionality
     path('api2/',include('APIView_ViewSet.urls')),
-    # This url mapping is for ViewSet functionality
-    path('api2/', include(router.urls)),
+    
 
     # """ apiview_viewset_with_models app"""
+    # This url mapping is for APIView functionality with Model
     path('api3/', include('apiview_viewset_with_models.urls')),
 
 
