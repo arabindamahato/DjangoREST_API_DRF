@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'only_serializers',
     'APIView_ViewSet',
     'apiview_viewset_with_models',
+    # 'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# Authentication and Autherization for globally (for all CBV)
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated',],
+
+}
+
+
+
+
+
 
 
 # Password validation

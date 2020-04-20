@@ -19,6 +19,9 @@ from rest_framework.mixins import (CreateModelMixin,
 	                               DestroyModelMixin,
 	                                )
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated, AllowAny
+
 
 #=============================================================
 # class EmployeeListAPIView(APIView):
@@ -118,6 +121,10 @@ from rest_framework.viewsets import ModelViewSet
 class EmployeeModelViewSet(ModelViewSet):
 	queryset = Employee2.objects.all()
 	serializer_class = Employee2Serializer
+	authentication_classes = [TokenAuthentication,]
+	# permission_classes = [IsAuthenticated,]
+	permission_classes = [AllowAny,]
+
 
     
 
