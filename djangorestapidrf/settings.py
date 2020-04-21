@@ -37,11 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party app
     'rest_framework',
+
+    # local app (Project apps)
     'only_serializers',
     'APIView_ViewSet',
     'apiview_viewset_with_models',
-    # 'rest_framework.authtoken',
+
+    # third party app
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

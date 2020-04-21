@@ -20,6 +20,8 @@ from APIView_ViewSet.views import TestViewSet
 from apiview_viewset_with_models.views import EmployeeModelViewSet
 from rest_framework.routers import DefaultRouter
 
+from rest_framework.authtoken.views import obtain_auth_token 
+
 # Here we need to register our view class name.
 router = DefaultRouter()
 #==========ViewSet without model==========
@@ -48,6 +50,10 @@ urlpatterns = [
     # """ apiview_viewset_with_models app"""
     # This url mapping is for APIView functionality with Model
     path('api3/', include('apiview_viewset_with_models.urls')),
+
+
+    # Authentication url's
+    path('api-token-auth/', obtain_auth_token, name='api-token-auth'),
 
 
 
