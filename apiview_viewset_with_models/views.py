@@ -18,9 +18,18 @@ from rest_framework.mixins import (CreateModelMixin,
 	                               UpdateModelMixin,
 	                               DestroyModelMixin,
 	                                )
-
+# Authentication Class
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny
+
+# Permissions Classes
+from rest_framework.permissions import (
+	                                   IsAuthenticated,
+                                       AllowAny,
+                                       IsAdminUser,
+                                       IsAuthenticatedOrReadOnly,
+                                       DjangoModelPermissions,
+                                       DjangoModelPermissionsOrAnonReadOnly,
+                                       )
 
 
 #=============================================================
@@ -114,16 +123,20 @@ class EmployeeDetailAPIViewMixin(RetrieveAPIView, UpdateModelMixin, DestroyModel
 
 
 
-#====================================ViewSet with model===========================================
+#====================================ViewSet with model with authentication===========================================
 
 from rest_framework.viewsets import ModelViewSet
 
 class EmployeeModelViewSet(ModelViewSet):
 	queryset = Employee2.objects.all()
 	serializer_class = Employee2Serializer
-	# authentication_classes = [TokenAuthentication,]
+	authentication_classes = [TokenAuthentication,]
 	# permission_classes = [IsAuthenticated,]
 	# permission_classes = [AllowAny,]
+	# permission_classes = [IsAdminUser,]
+	# permission_classes = [IsAuthenticatedOrReadOnly,]
+	# permission_classes = [DjangoModelPermissions,]
+	permission_classes = [DjangoModelPermissionsOrAnonReadOnly,]
 
 
     
