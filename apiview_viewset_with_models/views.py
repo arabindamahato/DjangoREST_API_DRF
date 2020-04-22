@@ -31,6 +31,8 @@ from rest_framework.permissions import (
                                        DjangoModelPermissionsOrAnonReadOnly,
                                        )
 
+from .permissions import IsReadOnly, IsGetOrPatch, IsArabinda
+
 
 #=============================================================
 # class EmployeeListAPIView(APIView):
@@ -136,7 +138,10 @@ class EmployeeModelViewSet(ModelViewSet):
 	# permission_classes = [IsAdminUser,]
 	# permission_classes = [IsAuthenticatedOrReadOnly,]
 	# permission_classes = [DjangoModelPermissions,]
-	permission_classes = [DjangoModelPermissionsOrAnonReadOnly,]
+	# permission_classes = [DjangoModelPermissionsOrAnonReadOnly,]
+	# permission_classes = [IsReadOnly,]
+	# permission_classes = [IsGetOrPatch,]
+	permission_classes = [IsArabinda,]
 
 
     
