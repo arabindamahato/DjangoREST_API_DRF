@@ -21,6 +21,13 @@ from apiview_viewset_with_models.views import EmployeeModelViewSet
 from rest_framework.routers import DefaultRouter
 
 from rest_framework.authtoken.views import obtain_auth_token 
+from rest_framework_jwt.views import (
+                                      obtain_jwt_token,
+                                      refresh_jwt_token,
+                                      verify_jwt_token,
+                                      )
+
+
 
 # Here we need to register our view class name.
 router = DefaultRouter()
@@ -52,8 +59,14 @@ urlpatterns = [
     path('api3/', include('apiview_viewset_with_models.urls')),
 
 
-    # Authentication url's
+    # Generate Token url's
     path('api-token-auth/', obtain_auth_token, name='api-token-auth'),
+
+    # Generate JWT Token url's for Generating, Refreshing, and Veryfying
+    path('auth-jwt/', obtain_jwt_token),
+    path('auth-jwt-refresh/', refresh_jwt_token),
+    path('auth-jwt-verify/', verify_jwt_token),
+
 
 
 

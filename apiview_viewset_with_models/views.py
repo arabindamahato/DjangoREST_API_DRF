@@ -133,7 +133,7 @@ class EmployeeModelViewSet(ModelViewSet):
 	queryset = Employee2.objects.all()
 	serializer_class = Employee2Serializer
 	authentication_classes = [TokenAuthentication,]
-	# permission_classes = [IsAuthenticated,]
+	permission_classes = [IsAuthenticated,]
 	# permission_classes = [AllowAny,]
 	# permission_classes = [IsAdminUser,]
 	# permission_classes = [IsAuthenticatedOrReadOnly,]
@@ -141,7 +141,7 @@ class EmployeeModelViewSet(ModelViewSet):
 	# permission_classes = [DjangoModelPermissionsOrAnonReadOnly,]
 	# permission_classes = [IsReadOnly,]
 	# permission_classes = [IsGetOrPatch,]
-	permission_classes = [IsArabinda,]
+	# permission_classes = [IsArabinda,]
 
 
     
