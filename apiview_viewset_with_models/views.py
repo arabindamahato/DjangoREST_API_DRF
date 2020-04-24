@@ -20,8 +20,13 @@ from rest_framework.mixins import (CreateModelMixin,
 	                                )
 # Token Authentication Class
 from rest_framework.authentication import TokenAuthentication
+
 # JSONWebToken Authentication Class
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+
+# Custom Authentication Class
+from .authentications import CustomAuthentication
+from .authentications import CustomAuthentication2
 
 # Permissions Classes
 from rest_framework.permissions import (
@@ -135,7 +140,9 @@ class EmployeeModelViewSet(ModelViewSet):
 	queryset = Employee2.objects.all()
 	serializer_class = Employee2Serializer
 	# authentication_classes = [TokenAuthentication,]
-	authentication_classes = [JSONWebTokenAuthentication,]
+	# authentication_classes = [JSONWebTokenAuthentication,]
+	authentication_classes = [CustomAuthentication2,]
+
 	permission_classes = [IsAuthenticated,]
 	# permission_classes = [AllowAny,]
 	# permission_classes = [IsAdminUser,]
