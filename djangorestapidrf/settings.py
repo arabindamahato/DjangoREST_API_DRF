@@ -98,9 +98,7 @@ REST_FRAMEWORK = {
 
 }
 
-JWT_AUTH = {
-    'JWT_ALLOW_REFRESH': True,
-}
+
 
 
 
@@ -143,3 +141,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+import datetime
+JWT_AUTH = {
+    'JWT_ALLOW_REFRESH': True,
+    # 'JWT_AUTH_HEADER_PREFIX':'ABC',
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=1200), # JWT Expiration Customization
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7), # JWT Refresh Expiration customization
+
+}

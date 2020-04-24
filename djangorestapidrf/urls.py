@@ -63,7 +63,7 @@ urlpatterns = [
     path('api-token-auth/', obtain_auth_token, name='api-token-auth'),
 
     # Generate JWT Token url's for Generating, Refreshing, and Veryfying
-    path('auth-jwt/', obtain_jwt_token),
+    path('auth-jwt-generate/', obtain_jwt_token),
     path('auth-jwt-refresh/', refresh_jwt_token),
     path('auth-jwt-verify/', verify_jwt_token),
 
