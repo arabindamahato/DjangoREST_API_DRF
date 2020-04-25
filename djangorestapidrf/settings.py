@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'only_serializers',
     'APIView_ViewSet',
     'apiview_viewset_with_models',
+    'pagination_and_filtering',
 
     # third party app
     'rest_framework.authtoken',
@@ -91,12 +92,6 @@ DATABASES = {
     }
 }
 
-# Authentication and Autherization for globally (for all CBV)
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
-    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated',],
-
-}
 
 
 
@@ -142,6 +137,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+
+
+# Authentication and Autherization for globally (for all CBV)
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
+#     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated',],
+
+# }
+
+
+
+
+
 import datetime
 JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
@@ -150,3 +159,13 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7), # JWT Refresh Expiration customization
 
 }
+
+
+
+# Enable pagination globally
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASSES' : 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':10,
+}
+

@@ -46,15 +46,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 
-    # """ only_serializer app"""
+    # =======================""" only_serializer app"""===========================
     path('api/',include('only_serializers.urls')), 
 
-    # """APIView_ViewSet app"""
+    # ======================="""APIView_ViewSet app"""============================
     # This url mapping is for APIView functionality
     path('api2/',include('APIView_ViewSet.urls')),
     
 
-    # """ apiview_viewset_with_models app"""
+    # ========================""" apiview_viewset_with_models app"""==============
     # This url mapping is for APIView functionality with Model
     path('api3/', include('apiview_viewset_with_models.urls')),
 
@@ -66,6 +66,12 @@ urlpatterns = [
     path('auth-jwt-generate/', obtain_jwt_token),
     path('auth-jwt-refresh/', refresh_jwt_token),
     path('auth-jwt-verify/', verify_jwt_token),
+
+    # ========================""" pagination and filtering app"""=================
+
+    path('api4/',include('pagination_and_filtering.urls')),
+
+
 
 
 
