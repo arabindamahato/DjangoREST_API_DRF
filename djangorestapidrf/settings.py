@@ -162,10 +162,14 @@ JWT_AUTH = {
 
 
 
-# Enable pagination globally
+# Enable pagination globally and Filter also
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASSES' : 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE':10,
+    'DEFAULT_FILTER_BACKENDS':('rest_framework.filters.SearchFilter',
+                               'rest_framework.filters.OrderingFilter'),
+    'SEARCH_PARAM':'mysearch', # default is search
+    'ORDERING_PARAM':'myordering',# default is ordering
 }
 
