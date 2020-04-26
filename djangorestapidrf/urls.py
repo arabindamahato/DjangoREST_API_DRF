@@ -72,6 +72,14 @@ urlpatterns = [
     path('api4/',include('pagination_and_filtering.urls')),
 
 
+    # ========================""" nested serializers app """======================
+
+    path('api5/',include('nested_serializers.urls')),  
+
+
+
+
+
 
 
 

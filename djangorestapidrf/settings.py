@@ -40,15 +40,16 @@ INSTALLED_APPS = [
 
     # third party app
     'rest_framework',
+    'rest_framework.authtoken',
 
     # local app (Project apps)
     'only_serializers',
     'APIView_ViewSet',
     'apiview_viewset_with_models',
     'pagination_and_filtering',
+    'nested_serializers',
 
-    # third party app
-    'rest_framework.authtoken',
+    
 ]
 
 MIDDLEWARE = [
