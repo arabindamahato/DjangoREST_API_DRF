@@ -23,6 +23,9 @@ from rest_framework.authentication import TokenAuthentication
 
 # JSONWebToken Authentication Class
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+# Basic Authentication Class
+from rest_framework.authentication import BasicAuthentication
+
 
 # Custom Authentication Class
 from .authentications import CustomAuthentication
@@ -141,8 +144,12 @@ class EmployeeModelViewSet(ModelViewSet):
 	serializer_class = Employee2Serializer
 	# authentication_classes = [TokenAuthentication,]
 	# authentication_classes = [JSONWebTokenAuthentication,]
+<<<<<<< HEAD
 	authentication_classes = [CustomAuthentication2,]
 
+=======
+	authentication_classes = [BasicAuthentication,]
+>>>>>>> token_authentication_autherisation
 	permission_classes = [IsAuthenticated,]
 	# permission_classes = [AllowAny,]
 	# permission_classes = [IsAdminUser,]

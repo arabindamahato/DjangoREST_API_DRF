@@ -21,6 +21,7 @@ urlpatterns = [
 
 	# """ For ViewSet functionality app level url is not required. """
 
+
 ]
 
 
