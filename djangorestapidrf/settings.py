@@ -93,16 +93,7 @@ DATABASES = {
     }
 }
 
-<<<<<<< HEAD
 
-
-
-
-
-
-
-=======
->>>>>>> token_authentication_autherisation
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -165,7 +156,7 @@ JWT_AUTH = {
 }
 
 
-<<<<<<< HEAD
+
 
 # Enable pagination globally and Filter also
 
@@ -178,11 +169,11 @@ REST_FRAMEWORK = {
     'ORDERING_PARAM':'myordering',# default is ordering
 }
 
-=======
+
 # Authentication and Autherization for globally (for all CBV)
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
 #     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated',],
 
 # }
->>>>>>> token_authentication_autherisation
+
